@@ -8,16 +8,18 @@ let Player = require(path.join(__dirname, '..', 'player'));
 
 describe('Game', () => {
   describe('#constructor()', () => {
-    it('requires two players', () => {
+    it('should fail because not params sent', () => {
       () => {
         new Game();
       }.should.throw(Error);
+    });
 
+    it('should work because params sent', () => {
       () => {
         let Player1 = new Player();
         let Player2 = new Player();
         new Game(Player1, Player2);
-      }.should.throw(Error);
+      }.should.not.throw(Error);
 
     });
   });
