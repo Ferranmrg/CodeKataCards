@@ -18,7 +18,12 @@ describe('Game', () => {
       () => {
         let Player1 = new Player();
         let Player2 = new Player();
-        new Game(Player1, Player2);
+        let Player3 = new Player();
+        let Player4 = new Player();
+
+        let Players = [Player1,Player2,Player3,Player4];
+
+        new Game(Players);
       }.should.not.throw(Error);
 
     });

@@ -1,9 +1,20 @@
-class Game {
-  constructor(Player1, Player2) {
-    if(!Player1 || !Player2) throw new Error();
+let Player = require('./player');
 
-    this.player1 = Player1;
-    this.player2 = Player2;
+class Game {
+  constructor(Players) {
+    if(!Players) throw new Error();
+
+    this.players = Players;
+  }
+
+  set players(players) {
+    let modelPlayer = new Player();
+    players.forEach((player) => {
+      if (typeof player !== typeof modelPlayer) {
+        throw new Error('Not sending a Player');
+      }
+    });
+    this._players = players;
   }
 }
 
