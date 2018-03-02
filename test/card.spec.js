@@ -17,7 +17,6 @@ describe('Card', () => {
       () => {
         new Card();
       }.should.not.throw(Error);
-
     });
   });
 });
